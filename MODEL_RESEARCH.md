@@ -58,3 +58,7 @@ For 2025 evaluation, chronological completed games are processed one at a time; 
 - Consider quarterback availability and injury-adjusted priors **only when a reliable historical as-of feed exists**; using later injury reports to predict earlier games would leak future information.
 - Benchmark Brier/log loss and calibration over multiple seasons; compare to holdout no-vig sportsbook line, without fitting to the holdout.
 - Maintain separate research comparison and fee-aware trade qualification; don't select trades solely because experimental Elo or EPA disagrees with the market.
+
+### V2.7 Settlement tracking caveats
+
+Public Kalshi `status=settled` and explicit outcome/result are the source of truth for outcome facts. A sample from the market's pregame ask is not a recorded order, fill or return, and our collector cannot reconstruct historical sportsbook odds that were not recorded. Partially settled or void markets must use Kalshi's explicit settlement payout if present. Settlement retrieval is bounded and failure-safe; if the endpoint rejects a filter or becomes unavailable, quote archival continues while the settlement panel is visibly marked stale. Ticker joins only occur for positions recorded in our **previously observed** quote archive; model outputs are never backfilled using outcomes. Raw daily snapshots are persistent in GitHub, while the public dashboard currently summarizes a recent 14-day window.

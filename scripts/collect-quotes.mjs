@@ -5,8 +5,9 @@ import { readdir, readFile, mkdir, appendFile, writeFile } from 'node:fs/promise
 import { resolve, join } from 'node:path';
 import { getKalshiMarkets, getFeeConfig } from '../lib/feeds.mjs';
 import { createQuoteBatch, summarizeQuoteBatches } from '../lib/price-history.mjs';
+import { fetchRecentKalshiSettlements, summarizeObservedSettlements } from '../lib/settlements.mjs';
 
-export async function collectQuotes({root=process.cwd(),now=new Date(),feed=getKalshiMarkets,feeFeed=getFeeConfig}={}){
+export async function collectQuotes({root=process.cwd(),now=new Date(),feed=getKalshiMarkets,feeFeed=getFeeConfig,settledFeed=fetchRecentKalshiSettlements}={}){
   const time=new Date(now).toISOString();
   const [quotes,fees]=await Promise.all([feed(),feeFeed()]);
   // Refuse to commit a partially paged or empty feed as if it were a full snapshot.
@@ -27,6 +28,18 @@ export async function collectQuotes({root=process.cwd(),now=new Date(),feed=getK
     }
   }
   const summary=summarizeQuoteBatches(all,{asOf:time,days:14});
+  // Outcome collection uses only Kalshi's public endpoint; a failure must not
+  // block quote archival or erase previously verified settlements.
+  const previousFile=resolve(root,'public','data','kalshi-history.json');
+  let previousSettlements=null;
+  try { previousSettlements=JSON.parse(await readFile(previousFile,'utf8')).settlements??null; } catch {}
+  try {
+    const settled=await settledFeed({at:now});
+    summary.settlements=summarizeObservedSettlements(summary,settled);
+  } catch(e) {
+    summary.settlements=previousSettlements?{...previousSettlements,stale:true,error:String(e.message||e)}
+      :{available:false,stale:true,error:String(e.message||e),verifiedSettlements:null,records:[]};
+  }
   const out=resolve(root,'public','data');await mkdir(out,{recursive:true});
   await writeFile(join(out,'kalshi-history.json'),JSON.stringify(summary,null,2)+'\n','utf8');
   return {file,marketCount:batch.markets.length,snapshots:summary.snapshots,trackedContracts:summary.trackedContracts};

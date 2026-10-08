@@ -1,3 +1,19 @@
+# NFL Edge Lab — V2.7 complete project
+
+**This archive contains the entire Next.js project, not just the update patch.**
+
+V2.7 adds a public Kalshi settlement/outcome ledger, observed price-movement
+rankings, and graceful recovery from settlement lookup failures. The outcome
+records and quotes are for research only; no money is wagered or orders sent.
+
+**For existing Working Copy installs:** Read `START-HERE.txt` before copying.
+Pull the repository first; automated GitHub Actions commits may contain newer
+`data/snapshots` and `public/data/kalshi-history.json` data than the ZIP. The
+complete backup contains the first verified 58-contract snapshot as of
+2026-10-08 21:25:07 UTC. Do not overwrite newer collected observations.
+
+---
+
 # V2.6 — Training holdout and scheduled public Kalshi price capture
 
 ## Deploying from your iPhone
@@ -147,3 +163,14 @@ Sources and attribution:
 
 Do not imply that third-party model code has been incorporated directly or that commercial
 forecast feeds are freely licensed for reuse. No live trading orders are sent.
+
+## V2.7: Public settlement tracker and quoted price movements
+
+- The **existing** `Collect Kalshi public NFL prices` GitHub Actions workflow runs the enhanced `scripts/collect-quotes.mjs`. No workflow edit, new API key, extra GitHub secret, or SportsGameOdds data is required.
+- Each collection still appends current public game-winner quotes to `data/snapshots/YYYY-MM-DD.jsonl` and updates `public/data/kalshi-history.json`. A separate bounded request checks public Kalshi **settled** game-winner markets over a 21-day window. Only settlements matching contracts we previously archived are displayed.
+- Published YES/NO results are interpreted as $1/$0 payout for a YES contract unless Kalshi provides a numeric settlement payout, which takes precedence. Void/partial settlements are not mislabeled wins or losses; unknown results are excluded.
+- **Failure-safe:** the collector continues saving price snapshots if the settlement endpoint is down or paginated beyond its safety bound. Previously verified settlement data is retained as stale and a warning is shown.
+- The dashboard shows largest YES ask movements between first and most recent observed snapshots and a verified settlement tracker. It **does not** call those quotes fills, infer model profitability, or use future settlements to rank earlier decisions.
+- **Only install the V2.7 patch after using Pull in Working Copy** to synchronize GitHub Actions' bot commits. Copy the changed files into existing paths, preserving `data/snapshots`, `public/data/kalshi-history.json`, and `.github/workflows/collect-kalshi-prices.yml`. When the next scheduled job runs, the settlement section will populate. Most upcoming NFL markets will remain unresolved until games finish.
+
+The project still has no audited positive-return strategy. Next step: collect **paired timestamped sportsbook consensus** at a limited cadence that respects the provider's free allowance and test prospective, pre-registered signals without hindsight.

@@ -1,0 +1,32 @@
+KALSHI NFL EDGE ENGINE — COMPLETE V2.7 PROJECT
+
+This is the COMPLETE project folder, not the small V2.7 patch.
+Includes: Next.js website, API endpoints, Elo/EPA models, calibration,
+model tests, price history, verified settlement collector, GitHub Actions
+schedule, README/MODEL_RESEARCH, and the public Kalshi price snapshot
+that was on GitHub as of 2026-10-08 21:25:07 UTC (58 contracts).
+
+HOW TO UPDATE FROM YOUR iPHONE (Working Copy):
+
+1. In Working Copy, open your existing kalshi-nfl-edge repo and PULL first.
+   The GitHub Actions collector automatically pushes price snapshots to main.
+2. In Files, extract the ZIP and open the kalshi-nfl-edge-starter folder.
+3. Copy its CONTENTS into the ROOT of the Working Copy repo. Merge folders,
+   replacing matching source files. Do not create a nested starter folder.
+4. IMPORTANT: Never DELETE the existing repository or the data/snapshots
+   archive. If GitHub has collected NEWER price snapshots since the archive
+   timestamp above, KEEP the newer files in data/snapshots/ and the newer
+   public/data/kalshi-history.json instead of overwriting them with the ZIP.
+   These two locations are generated data, not the V2.7 source changes.
+5. The hidden .github/workflows file is included for completeness, but
+   your existing GitHub Actions workflow already exists and is running.
+   You do not need to recreate or replace it.
+6. Commit and PUSH the V2.7 code changes:
+   Add observed Kalshi settlements and price moves (V2.7)
+7. Verify that Vercel finishes its production build, then check the site.
+
+DO NOT add API secrets to source files. Keep SPORTSGAMEODDS_API_KEY only in
+Vercel environment variables. No real-money execution is enabled.
+
+Source version: 0.7.0. Complete backup as of 2026-10-08 (first public price
+snapshot); future scheduled snapshots remain authoritative on GitHub.

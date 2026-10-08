@@ -41,3 +41,12 @@
 .calibrated-grid{grid-template-columns:repeat(5,minmax(0,1fr));}.calibrated-grid small{font-size:9px;}
 @media(max-width:900px){.calibrated-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:560px){.history-panel{padding:12px}.toggle-group{flex-wrap:wrap}.toggle-group button{min-width:30%;flex-grow:1;}}
+
+/* V2.7 – settlement facts and real price-movement history */
+.market-movement,.market-settlements{border-top:1px solid #345253;margin-top:14px;padding-top:13px}
+.market-movement>strong,.market-settlements>strong{color:#e0efed;display:block;margin-bottom:8px;font-size:12px}
+.market-move{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid #294348;color:#b5c9c9;font-size:11px;flex-wrap:wrap}
+.market-move-ticker{flex:1 1 175px;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#adc9d2}
+.market-move b{min-width:74px;text-align:right;color:#e6f2ef}
+.market-move b.up{color:#79dca4}.market-move b.down{color:#f9b6a7}
+.market-settlements .epa-summary{margin:6px 0 10px}
