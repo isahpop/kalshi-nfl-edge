@@ -1,3 +1,12 @@
+## V2.6: measured calibration and timestamped public quote capture
+
+- New `lib/calibration.mjs` fits ridge-regularized logistic corrections with **2023–2024** eligible games only; the same 2025 games are evaluated for Elo, EPA, calibrated Elo, calibrated Elo+EPA, and historical sportsbook probability. 2025 is deliberately kept out of numeric fitting, but it has been inspected during previous V2.4/2.5 research: it is not a pristine blind development holdout.
+- Strict calendar-date walk-forward: score all games for a date first; add that date's results and paired weekly EPA only afterward. This is stricter than the earlier V2.5 per-game loop for avoiding concurrent-game leakage.
+- Brier, log loss, five fixed probability calibration bins, training/holdout sample sizes and a rough per-game Brier-gap uncertainty interval are supplied. Do not interpret lower error as verified tradable advantage.
+- Current trained Elo+EPA probability is visible only for independently verified matchups with recent paired EPA. No experimental probability affects real or paper trade qualifications, which remain sportsbook-anchored.
+- An optional GitHub Actions cron job captures Kalshi public top-of-book quotes every two hours, writes daily JSONL batches, and derives a 14-day UI summary. Quotes only: **no sportsbook historical parity yet**, and no executed fills or P&L.
+- Future validation needs separately archived same-timestamp bookmaker odds (with free quota controls), independently confirmed results and settlement rules, a fresh prospective untouched period, and actual fill/slippage measurements. Quarterly/season calibration should be determined only before the test period.
+
 # NFL Edge Lab — Models and validation plan (V2.4)
 
 ## Three distinct things we should not conflate

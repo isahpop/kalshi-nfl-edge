@@ -1,3 +1,33 @@
+# V2.6 — Training holdout and scheduled public Kalshi price capture
+
+## Deploying from your iPhone
+
+1. Extract the **full V2.6 project ZIP** and replace the existing root contents in Working Copy.
+2. **Verify the hidden `.github/workflows/collect-kalshi-prices.yml` file has been copied.** Without that file, automated quote collection cannot run. Check `lib/calibration.mjs`, `lib/price-history.mjs`, and `scripts/collect-quotes.mjs` are also present.
+3. Commit `Add calibrated model tests and public Kalshi history (V2.6)` and push to `main`.
+4. In GitHub, visit **Actions → Collect Kalshi public NFL prices**. If Actions is not enabled, enable workflows for this repository. Select **Run workflow** once to trigger an initial capture. The scheduler normally runs every 2 hours (timing can be delayed by GitHub).
+5. Confirm the workflow generated `data/snapshots/YYYY-MM-DD.jsonl` and `public/data/kalshi-history.json`. The dashboard history section may lag until a Vercel production rebuild. **Pull** recent remote commits in Working Copy before your next manual commit, since the collector commits new data to `main`.
+
+No new API key required. The workflow uses public Kalshi API endpoints only and **never** requests SportsGameOdds or places orders. GitHub Actions must have `contents:write` access; repositories with restrictive Actions policies may need you to enable workflow write permission in repo **Settings → Actions → General**.
+
+## What the model lab actually measures
+
+- Trains two fixed-regularization logistic calibrators on 2023–2024 historical games: Elo only, and Elo plus the weekly EPA proxy.
+- Evaluates them on **the same eligible 2025 games** as raw Elo, EPA, and a historical no-vig sportsbook benchmark. Reports Brier score, log loss, and five-bin calibration, with an approximate unpaired-games 95% interval for the Elo+EPA-minus-sportsbook Brier gap.
+- 2025 outcomes have **no influence on fitted coefficients**, but previous V2.4 and V2.5 experiments exposed 2025 outcomes to us. Therefore 2025 is a **fitting holdout, not a pristine untouched blind test**. Future forward-only seasons are needed for a genuinely fresh validation.
+- All game-date predictions are formed **before** updating ratings or EPA with **any** completed game from the same date. Current-year updates use past results only. Experimental calibrated forecasts **never** affect sportsbook fair values, order qualification, Kelly sizing, or paper returns.
+- Current or historical quarterback changes, injuries, weather, market-line collection time, Kalshi fills, taxes, and model uncertainty are not yet modeled.
+
+## Quote intelligence, not profits
+
+- Public quote collector stores timestamped YES/NO top-of-book asks, bids, visible ask depth, volume, fee multiplier if verified, and ticker in daily append-only JSONL.
+- An approximately 14-day summary is exposed as `public/data/kalshi-history.json`. The full raw daily archive persists in GitHub. **No price history exists until the first successful workflow run.**
+- Displays observed price change only. An ask-price movement is **not** a trade, fill, settlement, guaranteed arbitrage, ROI, or closing-line value estimate.
+- Sportsbook odds are **not yet archived** with these timestamps. Historical bookmaker values in nflverse have unverified collection timestamps; do not claim a historical actionable Kalshi edge based on them.
+- The scheduled collector commits to GitHub; automatic Vercel redeploys on bot-generated commits can depend on your integration configuration. If the site shows zero snapshots after the data files exist, first verify whether Vercel has deployed that bot commit.
+
+---
+
 # NFL Edge Lab — V2.5 (Experimental EPA proxy + walk-forward model lab)
 
 NFL `KXNFLGAME` (game-winner) research dashboard for Kalshi. **No real-money trades, no Kalshi private API access, no promise of a profitable strategy.**

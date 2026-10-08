@@ -34,3 +34,10 @@
 .score-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:9px 0}.score-grid span{background:#173039;border-radius:6px;padding:9px;display:grid;gap:3px}.score-grid strong{font-size:16px;color:#d8edc3}.epa-panel small{display:block;color:#8aa7ae;line-height:1.6}
 .epa-detail{margin-top:9px;border:1px solid #426052;background:#1d3234;border-radius:7px;padding:10px;font-size:10px;color:#bddace;line-height:1.6}.epa-detail b{color:#d8f2b9}.epa-detail small{display:block;color:#93aeb0}
 @media(max-width:900px){.score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.toggle-group button{padding:9px 4px;font-size:10px}.epa-panel{padding:12px}.score-grid span{padding:7px}}
+
+/* V2.6 – research calibration and durable public quote archive */
+.history-panel{background:#10232a;border:1px solid #345253;border-radius:11px;padding:16px 19px;margin:15px 0;color:#a6c2c4;font-size:11px;line-height:1.65}
+.history-panel small{color:#8eabb5;display:block}.history-note{font-size:10px;color:#a7c5ac;margin-top:10px;line-height:1.5}
+.calibrated-grid{grid-template-columns:repeat(5,minmax(0,1fr));}.calibrated-grid small{font-size:9px;}
+@media(max-width:900px){.calibrated-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:560px){.history-panel{padding:12px}.toggle-group{flex-wrap:wrap}.toggle-group button{min-width:30%;flex-grow:1;}}

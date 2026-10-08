@@ -1,0 +1,11 @@
+{
+  "generatedAt": null,
+  "firstCapture": null,
+  "lastCapture": null,
+  "snapshots": 0,
+  "observations": 0,
+  "trackedContracts": 0,
+  "windowDays": 14,
+  "coverage": "Collection starts after the GitHub Actions workflow first runs. Kalshi public quotes only; no historical sportsbook odds, fills, or verified profits.",
+  "contracts": {}
+}

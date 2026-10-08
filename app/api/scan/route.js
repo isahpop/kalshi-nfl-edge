@@ -3,6 +3,7 @@ import { getKalshiMarkets, getFeeConfig, getSportsbookOdds } from '../../../lib/
 import { scoreMarkets, summarizeScan, DEFAULT_SETTINGS } from '../../../lib/engine.mjs';
 import { fetchNflReference, buildEloReference } from '../../../lib/reference.mjs';
 import { fetchWeeklyEpaReference, buildEpaReference } from '../../../lib/epa.mjs';
+import { buildCalibrationLab } from '../../../lib/calibration.mjs';
 export const runtime='nodejs';
 export async function GET() {
   try {
@@ -14,7 +15,7 @@ export async function GET() {
     // Skip provider usage entirely if Kalshi has no open game-winner markets.
     const odds = feed.markets.length ? await getSportsbookOdds() : {configured:!!process.env.SPORTSGAMEODDS_API_KEY, events:[], fetchedAt:null, error:null,provider:'SportsGameOdds',plan:'Amateur (free)',cacheHours:8,limited:false,notice:null};
     // The open NFL schedule is public data; failure must not break the existing scanner.
-    let reference=null,referenceError=null,epa=null,epaError=null,epaSeasons=[];
+    let reference=null,referenceError=null,epa=null,epaError=null,epaSeasons=[],calibration=null,calibrationError=null;
     const [scheduleResult,weeklyResult]=await Promise.all([schedulePromise,weeklyPromise]);
     if(scheduleResult.games){
       try {reference={games:scheduleResult.games,model:buildEloReference(scheduleResult.games)};}
@@ -24,11 +25,13 @@ export async function GET() {
       try{
         epaSeasons=weeklyResult.source.availableSeasons;
         epa={model:buildEpaReference(weeklyResult.source.weeks,reference.games),error:weeklyResult.source.unavailable.join('; ')||null};
+        try { calibration=buildCalibrationLab(weeklyResult.source.weeks,reference.games); }
+        catch(e) { calibrationError=e.message||'Calibration unavailable'; }
       } catch(e){epaError=e.message||'EPA model evaluation failed';}
     } else epaError=weeklyResult.error || (!reference ? 'NFL schedule unavailable for EPA matchup verification' : null);
     // Elo and EPA stay separate from bookmaker fair odds and never qualify a trade.
     const rows = scoreMarkets(feed.markets, odds.events, { feeMultiplier:fee.feeMultiplier,
-      feeVerified:fee.feeVerified, bankroll:DEFAULT_SETTINGS.startingBankroll, snapshotAt:feed.fetchedAt,reference:reference?{...reference,epa:epa?.model||null}:null });
+      feeVerified:fee.feeVerified, bankroll:DEFAULT_SETTINGS.startingBankroll, snapshotAt:feed.fetchedAt,reference:reference?{...reference,epa:epa?.model||null,calibration}:null });
     const diagnostics = summarizeScan(rows);
     return NextResponse.json({ rows, markets:rows.length, qualified:diagnostics.qualified,
       modeled:diagnostics.modeled, diagnostics, truncated:feed.truncated,
@@ -43,6 +46,12 @@ export async function GET() {
         availableSeasons:epaSeasons, missingSources:epa?.error||null,
         modeled:rows.filter(r=>r.reference?.epa).length, backtest:epa?.model?.summary||null,
         error:epaError, referenceOnly:true },
+      calibration: calibration ? {available:calibration.available,trainingSeasons:calibration.trainingSeasons,
+        holdoutSeason:calibration.holdoutSeason,trainingGames:calibration.trainingGames,testGames:calibration.testGames,
+        holdout:calibration.holdout,differenceVsBooks:calibration.differenceVsBooks,
+        liveModeled:rows.filter(r=>r.reference?.calibrated).length,
+        error:calibrationError,disclaimer:'Experimental. Fit only on earlier seasons; sportsbook historical timestamp unverified. No trading signals.'}
+        : {available:false,error:calibrationError || 'Weekly EPA reference unavailable'},
       fetchedAt:feed.fetchedAt, fee, sportsbook: {
         configured:odds.configured, fetchedAt:odds.fetchedAt, error:odds.error,
         provider:odds.provider, plan:odds.plan, cacheHours:odds.cacheHours, limited:odds.limited, notice:odds.notice,
