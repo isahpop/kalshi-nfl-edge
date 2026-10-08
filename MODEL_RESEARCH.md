@@ -32,3 +32,20 @@
 ## Free SportsGameOdds plan and data timeliness
 
 Free tier is capped at 2,500 event objects per rolling 30 days and 10 requests/minute, per https://sportsgameodds.com/docs/info/rate-limiting. Each event returned is typically one object, not one object per bookmaker. The 8-hour stable-window cache reduces consumption but can cause *reference-only* odds once the live signal freshness limit (60 minutes) has elapsed. Do not weaken the freshness gate to generate more signals. A future update can expose quota visibility and an explicitly budgeted near-kickoff refresh schedule if the remaining quota allows.
+
+
+## V2.5 research design — no hindsight
+
+The new EPA model uses public [nflverse weekly team stats](https://github.com/nflverse/nflverse-data/releases/tag/stats_team) produced via [nflfastR `calculate_stats()`](https://nflreadr.nflverse.com/articles/dictionary_team_stats.html). EPA is a context-dependent play-value statistic, not a guarantee of subsequent win probability. Our approximation uses summed team passing QB-EPA + rushing EPA over `(attempts + sacks + carries)`; it is **not** the same as reconstructing EPA per snap directly from raw PBP. Defensive estimates are opponent offense results from matched games, not a distinct official defensive EPA data series.
+
+The 8-game recency, 0.84 decay, 5-game shrinkage constant, 3.5 logistic scale and 0.1 home logit are transparent **untuned starting parameters**. They are not claims of existing published models and must be calibrated only with training data if we add statistical fitting later.
+
+For 2025 evaluation, chronological completed games are processed one at a time; the pregame prediction is computed before incorporating that game's statistics, scores, or bookmaker results. Elo, EPA, and 50/50 blend Brier scores are evaluated on the **same eligible game subset**, alongside nflverse pregame moneyline implied probability. Moneyline snapshot timestamps may not be verifiable, so this is **not** a confirmed closing-line value comparison. Only later truly forward-collected quotes with stored timestamps can evaluate actual Kalshi returns after fees/slippage and expected-vs-executable fills.
+
+### Scope and next milestones
+
+- Verify weekly team stats download and game-ID joins on the deployed instance; ensure 2026 coverage is current before interpreting EPA gaps.
+- Build a timestamped persistent quote collector and scheduled snapshots to measure CLV, edge persistence, and realized returns; local browser storage is not a backtest database.
+- Consider quarterback availability and injury-adjusted priors **only when a reliable historical as-of feed exists**; using later injury reports to predict earlier games would leak future information.
+- Benchmark Brier/log loss and calibration over multiple seasons; compare to holdout no-vig sportsbook line, without fitting to the holdout.
+- Maintain separate research comparison and fee-aware trade qualification; don't select trades solely because experimental Elo or EPA disagrees with the market.

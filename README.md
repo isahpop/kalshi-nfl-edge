@@ -1,6 +1,20 @@
-# NFL Edge Lab — V2.3 (model diagnostics and clearer fee/sizing messages)
+# NFL Edge Lab — V2.5 (Experimental EPA proxy + walk-forward model lab)
 
 NFL `KXNFLGAME` (game-winner) research dashboard for Kalshi. **No real-money trades, no Kalshi private API access, no promise of a profitable strategy.**
+
+
+## V2.5: NFL weekly EPA model lab
+
+- **New public-data input:** nflverse **weekly team summary statistics** for 2023–2026, fetched from official public GitHub release assets (`stats_team_week_YYYY.csv`), cached for **12 hours** by the Next.js server. This is independent of the SportsGameOdds key and does not use its object allowance. A failed upstream download is shown as a source-availability notice and **does not stop** Kalshi + sportsbook + Elo scans.
+- **Precise label:** This is an *experimental EPA proxy*, not exact raw-play EPA/play. Team passing QB-EPA and rushing EPA are summed, then divided by `(attempts + sacks_suffered + carries)` (an approximate play denominator). Opposing teams' offensive EPA proxy serves as defense EPA allowed. EPA sources/denominators can differ from nflfastR per-play tables.
+- **Prediction design:** recent 8 games receive exponentially declining weights (0.84 per older game); ratings are shrunk toward 0 when the sample is small. Team offense is compared against the opponent's defense-allowed and converted to a bounded logistic home-win estimate. The slope **3.5** and +0.1 home-logit are **heuristics**, not optimized on training data and not proven predictive. At least four paired games per team are required.
+- **Research-only model stack:** book consensus is still the ONLY automatic fair probability for pricing. Basic score-based Elo, weekly EPA proxy, and a fixed **50/50 Elo/EPA blend** appear **separately** in the market board. None are used to qualify orders, calculate Kelly stakes, or override sportsbook probabilities.
+- **Honest evaluation:** Each completed game is predicted using only prior game records. For the 2025 holdout, the model compares EPA, score-only Elo, the fixed blend, and historical pregame moneyline-implied probabilities on the **same games** whenever EPA coverage and moneyline columns are available. All results use Brier score (**lower is better**). The nflverse moneyline columns have **unverified collection timestamps**: avoid calling them guaranteed closing prices. No tuning was done on the holdout, and a single-season comparison is not a statistically validated or profitable strategy.
+- **Operational caveats:** The weekly files are hosted on GitHub releases and might be temporarily unavailable, stale, or subject to GitHub's outgoing fetch restrictions. The interface reports missing seasons, most recent completed EPA game, and whether predictions are available; do **not** interpret an unavailable source as a zero-strength team. A full Vercel build and real external feed test must be completed after deployment.
+
+### Deployment
+
+As with previous versions, extract the included `kalshi-nfl-edge-starter` folder and replace project contents **at the root** of your iPhone Working Copy checkout. Commit: `Add experimental EPA model lab and walk-forward evaluation (V2.5)`, then Push. No environment-variable changes are required. Once deployed, check the **EPA** filter, the **EPA model lab** section and `/api/scan`'s `epa` field to verify upstream availability. 
 
 ## V2.3 improvements
 

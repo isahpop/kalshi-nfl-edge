@@ -25,3 +25,12 @@
 .elo-detail{font-size:11px;margin-top:10px;padding:10px;border:1px solid #344757;border-radius:7px;background:#142631;color:#b0cedb;line-height:1.55}
 .elo-detail b{color:#d8f1b7}.elo-detail small{display:block;color:#839eac;font-size:10px}
 @media(max-width:560px){.toggle-group button{font-size:10px;padding:9px 5px}}
+
+/* V2.5 experimental EPA data and comparison, intentionally no signal badging */
+.epa-panel{background:#10232a;border:1px solid #33524e;border-radius:11px;margin:15px 0 17px;padding:16px 19px;color:#a6c2c4;font-size:11px;line-height:1.65}
+.epa-title{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}.epa-title strong{font-size:14px;color:#d2efb8}.epa-title span{color:#95aeb8}
+.epa-summary{display:flex;gap:10px 20px;flex-wrap:wrap;margin:12px 0}.epa-summary b{color:#ddf4c1;font-size:13px}
+.epa-backtest{border-top:1px solid #35504b;border-bottom:1px solid #35504b;padding:12px 0;margin:12px 0}.epa-backtest b{color:#d5e8d7}
+.score-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:9px 0}.score-grid span{background:#173039;border-radius:6px;padding:9px;display:grid;gap:3px}.score-grid strong{font-size:16px;color:#d8edc3}.epa-panel small{display:block;color:#8aa7ae;line-height:1.6}
+.epa-detail{margin-top:9px;border:1px solid #426052;background:#1d3234;border-radius:7px;padding:10px;font-size:10px;color:#bddace;line-height:1.6}.epa-detail b{color:#d8f2b9}.epa-detail small{display:block;color:#93aeb0}
+@media(max-width:900px){.score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.toggle-group button{padding:9px 4px;font-size:10px}.epa-panel{padding:12px}.score-grid span{padding:7px}}
