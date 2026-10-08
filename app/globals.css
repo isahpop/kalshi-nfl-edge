@@ -17,3 +17,11 @@
 .diagnostic-reasons{display:flex;flex-wrap:wrap;gap:8px 13px;margin-top:6px}
 .diagnostic-reasons div{background:#172c30;border-radius:5px;padding:5px 8px}
 .diagnostic-reasons b{color:#e3c19a;margin-right:4px}
+
+/* V2.4 independent schedule / experimental Elo reference. */
+.reference-summary{border-top:1px solid #2f4850;padding-top:12px;margin-top:12px;font-size:11px;line-height:1.65;color:#9cb7b8}
+.reference-summary b{color:#c8e4b2}.reference-summary span{display:block}.reference-summary div{margin-top:4px}
+.reference-error{color:#e4b3a1}.schedule-ok{font-size:10px;color:#a5d599;margin-top:8px;line-height:1.5}
+.elo-detail{font-size:11px;margin-top:10px;padding:10px;border:1px solid #344757;border-radius:7px;background:#142631;color:#b0cedb;line-height:1.55}
+.elo-detail b{color:#d8f1b7}.elo-detail small{display:block;color:#839eac;font-size:10px}
+@media(max-width:560px){.toggle-group button{font-size:10px;padding:9px 5px}}

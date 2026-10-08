@@ -76,3 +76,30 @@ For local development use `.env.local` (Git-ignored): `SPORTSGAMEODDS_API_KEY=yo
 ### How to deploy this update from Working Copy on iPhone
 
 The `SPORTSGAMEODDS_API_KEY` environment variable you configured previously is sufficient. Do not create a new key. After pushing V2.3, use `/api/scan` to verify `modeled > 0` on a matching slate. `qualified` can still be zero when kickoff times disagree, or bookmaker quotes are stale, or thresholds are not met.
+
+
+## V2.4: Public NFL schedule cross-check and experimental Elo
+
+The scanner optionally retrieves the public NFL schedule and completed results from the
+[nflverse/nfldata games.csv](https://github.com/nflverse/nfldata/blob/master/data/games.csv)
+source (six-hour Next.js fetch cache). This extra data source does **not** consume the SportsGameOdds quota.
+The schedule verifies bookmaker kickoff time using the game date and the Eastern scheduled time,
+while Kalshi's `occurrence_datetime` is shown distinctly and is **not** assumed to be kickoff.
+If the nflverse source is unavailable or ambiguous, the original timing check is retained.
+
+A transparent, **experimental** Elo baseline is built from final scores (starting with 2022),
+using K=20, a 45-point home-field prior, and two-thirds of rating carried from season to season.
+Unlike FiveThirtyEight's full model and nfelo, this is intentionally *not* their exact forecast:
+there are no QB, injury, travel, EPA, or market-informed strength adjustments.
+The separate `Elo gaps` research tab ranks sportsbook/Elo disagreement, but Elo results
+**never qualify a betting signal**, change the displayed sportsbook consensus, or authorize trades.
+The 2025 walk-forward Brier score is only an illustrative diagnostic; it does not establish ROI.
+
+Sources and attribution:
+- nflverse/nfldata: https://github.com/nflverse/nfldata (schedule and final scores; original data contributors credited)
+- nflverse data ecosystem: https://github.com/nflverse/nflverse-data
+- FiveThirtyEight NFL Elo concepts: https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/
+- nfelo open-source research: https://github.com/greerreNFL/nfelo
+
+Do not imply that third-party model code has been incorporated directly or that commercial
+forecast feeds are freely licensed for reuse. No live trading orders are sent.
