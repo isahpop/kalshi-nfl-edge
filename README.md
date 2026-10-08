@@ -1,6 +1,14 @@
-# NFL Edge Lab — V2.2 (market matching and free-plan cache hotfix)
+# NFL Edge Lab — V2.3 (model diagnostics and clearer fee/sizing messages)
 
 NFL `KXNFLGAME` (game-winner) research dashboard for Kalshi. **No real-money trades, no Kalshi private API access, no promise of a profitable strategy.**
+
+## V2.3 improvements
+
+- Dashboard now explains how many modeled contracts show **positive fee-adjusted value**, clear the **2-point threshold**, and pass **all quality checks**. Shows the most frequent blocker reasons. These are research numbers, not proof of value in actual executions.
+- Removes the misleading *cannot afford one contract* warning on negative-edge positions: **zero Kelly is intentional when expected value is negative**. For positive-edge opportunities too small to size, warns that the calculated Kelly allocation is less than one contract.
+- Displays **one-contract hypothetical fee** separately from a multi-contract order fee; a 0-contract suggested stake does not mean trading would be fee-free.
+- Displays SportsGameOdds reported kickoff time and the Kalshi event timestamp separately when a game is matched. A consistent 180-minute difference is flagged but **not ignored or automatically fixed**: verified independent kickoff data is still needed before labeling it an actionable signal.
+- Remains paper-trading only. No live execution. Free-tier cache still means estimates can be stale; do not bet on old odds.
 
 ## Quick start
 
@@ -44,7 +52,7 @@ For local development use `.env.local` (Git-ignored): `SPORTSGAMEODDS_API_KEY=yo
 
 ### Deploy from an iPhone with Working Copy
 
-1. Extract the V2.2 ZIP in Apple's Files app.
+1. Extract the V2.3 ZIP in Apple's Files app.
 2. Copy the **contents** of the included `kalshi-nfl-edge-starter` folder into **Locations → Working Copy → kalshi-nfl-edge**. Replace the existing `app`, `lib`, `README.md`, `package.json`, and other same-name items when prompted. Keep the existing `.gitignore`; do not add an extra outer `kalshi-nfl-edge-starter` folder into the repository.
 3. Return to Working Copy, verify `app`, `lib`, and root project files, then **Commit → Push** to `main`.
 4. Vercel automatically builds a new production deployment. Visit the latest preview/production URL and confirm `/api/scan` responds.
@@ -67,4 +75,4 @@ For local development use `.env.local` (Git-ignored): `SPORTSGAMEODDS_API_KEY=yo
 
 ### How to deploy this update from Working Copy on iPhone
 
-The `SPORTSGAMEODDS_API_KEY` environment variable you configured previously is sufficient. Do not create a new key. After pushing V2.2, use `/api/scan` to verify `modeled > 0` on a matching slate. `qualified` can still be zero when kickoff times disagree, or bookmaker quotes are stale, or thresholds are not met.
+The `SPORTSGAMEODDS_API_KEY` environment variable you configured previously is sufficient. Do not create a new key. After pushing V2.3, use `/api/scan` to verify `modeled > 0` on a matching slate. `qualified` can still be zero when kickoff times disagree, or bookmaker quotes are stale, or thresholds are not met.

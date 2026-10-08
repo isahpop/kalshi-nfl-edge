@@ -7,3 +7,13 @@
 .export-buttons{display:flex;gap:9px;flex-wrap:wrap}.settle-actions{display:flex;gap:6px}.settle-actions button{border:1px solid #3a5553;border-radius:5px;background:#1c3031;color:#c0ded1;padding:8px;cursor:pointer;font-size:10px}.settle-actions button:hover{background:#2c4946}
 .outcome{margin-top:7px;font-size:12px;font-weight:750}.outcome.positive{color:#b9ef87}.outcome.negative{color:#f5a49d}.paper-warnings{font-size:10px;color:#98a4aa;margin:9px 0 0;line-height:1.5;max-width:340px}
 @media(max-width:560px){.data-line{gap:9px}.settle-actions{flex-wrap:wrap}.export-buttons .button{font-size:10px!important;gap:5px!important;padding:9px!important}}
+/* V2.3: transparently distinguish model coverage from quality-qualified signals. */
+.diagnostic-panel{background:#111f29;border:1px solid #2b4547;border-radius:11px;padding:16px 19px;margin-top:14px;color:#9fb9bc;font-size:11px;line-height:1.6}
+.diagnostic-title{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.diagnostic-title strong{font-size:13px;color:#e8f0e9}.diagnostic-title span{color:#82a0a6}
+.diagnostic-stats{display:flex;flex-wrap:wrap;gap:8px 19px;margin-top:10px}
+.diagnostic-stats b{font-size:14px;color:#c3f28e;margin-right:3px}
+.diagnostic-panel p{margin:10px 0 5px}
+.diagnostic-reasons{display:flex;flex-wrap:wrap;gap:8px 13px;margin-top:6px}
+.diagnostic-reasons div{background:#172c30;border-radius:5px;padding:5px 8px}
+.diagnostic-reasons b{color:#e3c19a;margin-right:4px}

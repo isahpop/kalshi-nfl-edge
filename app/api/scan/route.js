@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getKalshiMarkets, getFeeConfig, getSportsbookOdds } from '../../../lib/feeds.mjs';
-import { scoreMarkets, DEFAULT_SETTINGS } from '../../../lib/engine.mjs';
+import { scoreMarkets, summarizeScan, DEFAULT_SETTINGS } from '../../../lib/engine.mjs';
 export const runtime='nodejs';
 export async function GET() {
   try {
@@ -10,8 +10,9 @@ export async function GET() {
     // Only fully qualified automated model signals: never infer fair odds from market quotes.
     const rows = scoreMarkets(feed.markets, odds.events, { feeMultiplier:fee.feeMultiplier,
       feeVerified:fee.feeVerified, bankroll:DEFAULT_SETTINGS.startingBankroll, snapshotAt:feed.fetchedAt });
-    return NextResponse.json({ rows, markets:rows.length, qualified: rows.filter(r=>r.qualified).length,
-      modeled:rows.filter(r=>r.auto).length, truncated:feed.truncated,
+    const diagnostics = summarizeScan(rows);
+    return NextResponse.json({ rows, markets:rows.length, qualified:diagnostics.qualified,
+      modeled:diagnostics.modeled, diagnostics, truncated:feed.truncated,
       fetchedAt:feed.fetchedAt, fee, sportsbook: {
         configured:odds.configured, fetchedAt:odds.fetchedAt, error:odds.error,
         provider:odds.provider, plan:odds.plan, cacheHours:odds.cacheHours, limited:odds.limited, notice:odds.notice,
