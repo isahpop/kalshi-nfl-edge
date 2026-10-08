@@ -1,15 +1,11 @@
 import { NextResponse } from 'next/server';
+import { getKalshiMarkets, getFeeConfig } from '../../../lib/feeds.mjs';
 export const runtime = 'nodejs';
-export const revalidate = 45;
 export async function GET() {
-  const url = 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNFLGAME&status=open&limit=250';
   try {
-    const response = await fetch(url, { next: { revalidate: 45 }, signal: AbortSignal.timeout(10000) });
-    if (!response.ok) throw new Error(`Kalshi returned HTTP ${response.status}`);
-    const data = await response.json();
-    if (!Array.isArray(data.markets)) throw new Error('Kalshi returned an unexpected response');
-    return NextResponse.json({ markets: data.markets, fetchedAt: new Date().toISOString(), truncated: Boolean(data.cursor) });
+    const [feed, fee] = await Promise.all([getKalshiMarkets(), getFeeConfig()]);
+    return NextResponse.json({ ...feed, ...fee }, { headers:{'Cache-Control':'public, s-maxage=60, stale-while-revalidate=30'} });
   } catch (error) {
-    return NextResponse.json({ error: `Kalshi market feed unavailable: ${error.message}`, markets: [] }, { status: 502 });
+    return NextResponse.json({ error:`Kalshi feed unavailable: ${error.message}`, markets:[] }, {status:502});
   }
 }
