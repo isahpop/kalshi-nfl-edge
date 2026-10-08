@@ -138,7 +138,7 @@ export default function Dashboard() {
           {error && <div className="alert"><b>Scanner issue</b><div>{error}. Last successful snapshot, if any, is shown below.</div></div>}
           {!scan?.sportsbook?.configured && <div className="notice"><Icon name="shield"/><span><b>Automatic modeling is not configured yet.</b> Add a server-side <code>SPORTSGAMEODDS_API_KEY</code> in Vercel to unlock sportsbook-based signals. Manual probabilities are what-if scenarios, not confirmed edges.</span></div>}
           {scan?.sportsbook?.limited && <div className="alert subtle"><b>Odds slate truncated</b><div>The free-plan event cap was reached. Not all upcoming games may be compared.</div></div>}
-          {scan?.sportsbook?.notice && <div className="alert subtle"><b>Provider notice</b><div>{scan.sportsbook.notice}</div></div>}
+          {scan?.sportsbook?.notice && <div className="alert subtle"><b>SportsGameOdds free-plan coverage</b><div>Some premium bookmaker prices are omitted under your free plan. Available NFL moneylines can still be used for research. You do not need to upgrade for this scanner. ({scan.sportsbook.notice})</div></div>}
           {scan?.sportsbook?.error && <div className="alert subtle"><b>Sportsbook API issue</b><div>{scan.sportsbook.error}</div></div>}
           {scan?.fee?.feeVerified === false && <div className="alert subtle"><b>Fee schedule could not be verified</b><div>Displayed fees are estimates using a default multiplier. Qualified automatic signals are suspended.</div></div>}
           {scan?.truncated && <div className="alert subtle">Only part of the Kalshi market feed could be loaded. Rankings may be incomplete.</div>}

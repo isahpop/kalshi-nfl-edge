@@ -1,4 +1,4 @@
-# NFL Edge Lab — V2.1 (SportsGameOdds Free) fee-aware paper scanner
+# NFL Edge Lab — V2.2 (market matching and free-plan cache hotfix)
 
 NFL `KXNFLGAME` (game-winner) research dashboard for Kalshi. **No real-money trades, no Kalshi private API access, no promise of a profitable strategy.**
 
@@ -14,7 +14,8 @@ npm run dev
 - The dashboard shows public Kalshi YES/NO *ask* prices, price spreads, and reported visible depth. It requests up to six pages of currently open NFL game-winner markets from Kalshi and reports truncation.
 - A separate **server-side** SportsGameOdds feed produces our own median **no-vig** implied probabilities from paired book moneylines (not Kalshi or provider fairOdds). Only pregame, uniquely matched games with **at least 3 different books** and at most 8 percentage points of disagreement receive automatic fair-value estimates. Model reference prices can be cached for up to 8 hours, but only bookmaker quotes no older than 60 minutes qualify as potential signals.
 - Fees use the general **quadratic taker fee** (0.07 × multiplier × contracts × price × (1−price), rounded *up per order* to the nearest cent), obtaining the **series multiplier from Kalshi** when available. Other fee exceptions or promotions may differ. Adds an extra **1¢ of simulated slippage per contract**, configurable in `lib/engine.mjs`.
-- The **qualified signals** filter requires positive **net edge ≥2 percentage points**, a verifiable fee multiplier, known depth, bid/ask spread ≤12 percentage points, and an API snapshot ≤3 minutes old. `updated_time` in the market API is metadata-only; it is **not a quote timestamp**. Quotes and displayed depth are not guarantees of execution.
+- The **qualified signals** filter requires positive **net edge ≥2 percentage points**, a verifiable fee multiplier, known depth, bid/ask spread ≤12 percentage points, and an API snapshot ≤3 minutes old. Kalshi returns `status: "active"` for its open market contracts; both `active` and `open` are supported. `updated_time` in the market API is metadata-only; it is **not a quote timestamp**. Quotes and displayed depth are not guarantees of execution.
+- **Cross-provider kickoff discrepancies:** An exact team/ticker match with a kickoff-time difference of up to 6 hours may be shown as *reference-only*, but any difference over 45 minutes suppresses qualified signals. The October 8 live samples showed a 3-hour discrepancy; this should be investigated, not silently corrected by guessing the right time zone.
 - Paper positions use **quarter Kelly** based on estimated fee-adjusted breakeven: **5% maximum per simulated order, 10% per NFL game, 25% total open exposure**, starting with **$200**. A simulated order never exceeds reported best-ask size when known.
 - The **paper journal** stores positions only in browser `localStorage`. Mark outcomes manually as won/lost/void to record *simulated* realized P&L. CSV/JSON exports are available; there is no cross-device sync or auto-settlement.
 
@@ -43,8 +44,8 @@ For local development use `.env.local` (Git-ignored): `SPORTSGAMEODDS_API_KEY=yo
 
 ### Deploy from an iPhone with Working Copy
 
-1. Extract the V2.1 ZIP in Apple's Files app.
-2. Copy the **contents** of the included project folder into **Locations → Working Copy → kalshi-nfl-edge**. Replace the existing `app`, `lib`, `README.md`, `package.json`, and other same-name files as prompted. Keep `.gitignore`; do not copy an extra outer `kalshi-nfl-edge-v2` folder into the repository.
+1. Extract the V2.2 ZIP in Apple's Files app.
+2. Copy the **contents** of the included `kalshi-nfl-edge-starter` folder into **Locations → Working Copy → kalshi-nfl-edge**. Replace the existing `app`, `lib`, `README.md`, `package.json`, and other same-name items when prompted. Keep the existing `.gitignore`; do not add an extra outer `kalshi-nfl-edge-starter` folder into the repository.
 3. Return to Working Copy, verify `app`, `lib`, and root project files, then **Commit → Push** to `main`.
 4. Vercel automatically builds a new production deployment. Visit the latest preview/production URL and confirm `/api/scan` responds.
 
@@ -58,7 +59,7 @@ For local development use `.env.local` (Git-ignored): `SPORTSGAMEODDS_API_KEY=yo
 
 - **Key:** `SPORTSGAMEODDS_API_KEY` added **only** in Vercel Settings → Environment Variables → Production (and Preview if needed). Do not paste an actual key into `.env.example`, GitHub or chat.
 - API: `GET https://api.sportsgameodds.com/v2/events`, header `x-api-key` (never a URL parameter). Filter: `leagueID=NFL`, pregame events in the next 8 days, and **full-game home + away moneylines only**.
-- Free plan as of Oct 2026: 10 requests/minute; 2,500 returned objects per rolling 30-day period; updates roughly every 10 minutes. **Our own server intentionally caches 8 hours.** At an assumed maximum 20 events and three fetches daily, 30 days would consume ~1,800 event objects, **not a guarantee**—cache misses, extra redeployments and outside use can change actual consumption. Check your provider dashboard and `/v2/account/usage`.
+- Free plan as of Oct 2026: 10 requests/minute; 2,500 returned objects per rolling 30-day period; updates roughly every 10 minutes. **Our own server requests the same stable URL for each 8-hour window so the Next.js fetch cache can be effective.** At an assumed maximum 20 events and three fetches daily, 30 days would consume ~1,800 event objects, **not a guarantee**—cache misses, extra redeployments and outside use can change actual consumption. Check your provider dashboard and `/v2/account/usage`.
 - Fetches only one page (max 20 events); warns on pagination and provider access notices. **Does not automatically retry rate-limit responses**.
 - Require 3 distinct bookmakers with **both sides available**, verified line update timestamps, and within 15 minutes of each other. Calculate median no-vig implied probabilities ourselves. Never use Kalshi as a source of fair probability.
 - When old odds are cached, their valuations can still be displayed as *research only*, but signals are disqualified once the oldest contributing sportsbook quote is over **60 minutes** old. This avoids treating 8-hour-old bookmaker prices as a current opportunity.
@@ -66,4 +67,4 @@ For local development use `.env.local` (Git-ignored): `SPORTSGAMEODDS_API_KEY=yo
 
 ### How to deploy this update from Working Copy on iPhone
 
-If following the steps above, you can set the key in Vercel **before** pushing V2.1, which avoids an extra redeployment. Then use `/api/scan` to verify provider status. Automatic signals may be absent when bookmaker quotes are stale or do not satisfy the quality gates.
+The `SPORTSGAMEODDS_API_KEY` environment variable you configured previously is sufficient. Do not create a new key. After pushing V2.2, use `/api/scan` to verify `modeled > 0` on a matching slate. `qualified` can still be zero when kickoff times disagree, or bookmaker quotes are stale, or thresholds are not met.
