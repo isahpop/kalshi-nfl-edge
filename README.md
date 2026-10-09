@@ -1,3 +1,34 @@
+# NFL Edge Lab — V2.8: Timestamped Paired Odds Evidence
+
+V2.8 is a **full project** update that collects sportsbook no-vig reference probabilities only in a handful of pregame NFL windows, and archives each qualifying comparison **inside the existing GitHub-synchronized Kalshi price snapshot**. No new key, GitHub secret, provider subscription, or workflow editing is required. It remains a **research/paper-only** engine.
+
+## What changed
+
+- `lib/paired-evidence.mjs` computes independent sportsbook de-vig probabilities for uniquely matched Kalshi game-winner markets. Requires **3+ paired bookmakers** with consensus range ≤8 percentage points and timestamps whose **oldest** quote is ≤60 minutes old at Kalshi capture time. Refuses started games, invalid selection IDs, quote staleness, and inconsistent data.
+- `scripts/collect-quotes.mjs` continues to save Kalshi quotes every two hours. It requests a sportsbook snapshot **only on Sun 16:xx and 20:xx UTC, Mon 22:xx UTC, and Thu 22:xx UTC**, or during an explicitly triggered GitHub workflow run. The same GitHub workflow still commits `data/snapshots/*.jsonl` and `public/data/kalshi-history.json`. No new GitHub permissions. A public `https://kalshi-nfl-edge.vercel.app/api/odds` route is used; your secret API key stays on Vercel. The existing 8-hour Vercel sportsbook fetch cache is retained.
+- New stored `bookPair` records contain observed timestamps, bookmaker counts, age, consensus and one-contract estimated cost/edge **as they existed at collection time**, rather than reconstructing the reference after the game. A source error is archived as an unavailable attempt, never invented as zero edge. If the `/api/odds` endpoint cannot be accessed by GitHub Actions, ordinary Kalshi capture continues and the dashboard reports the error.
+- The scanner's *Paired odds evidence* panel shows counts, attempted/successful windows, prospective fee-adjusted **research screens** (not automatic trade-qualified signals), and later one-contract settlement arithmetic **only after verified official Kalshi outcomes**.
+- A hypothetical settlement row uses only the **first qualifying screen per game**, and subtracts one-contract ask + estimated Kalshi taker fee + 1¢ slippage. It assumes a fill despite no order ever being sent. It is **not real profit**, not risk-sized, and not a valid live portfolio ROI. It has no independent verification of game kickoff and does not claim market-edge certainty.
+
+**Very important: the working public odds route has not been confirmed accessible from a GitHub Actions runner.** After pushing V2.8, manually run the existing GitHub Action once and inspect the new dashboard section. A 403/502 is a source-access limitation to investigate, not a reason to put the private sportsbook key in GitHub or weaken the freshness checks.
+
+## Install safely from iPhone / Working Copy
+
+1. Pull in Working Copy immediately before replacing code: scheduled Actions can add newer commits while you work.
+2. Extract the entire ZIP; open `kalshi-nfl-edge-starter` and copy its CONTENTS into the existing repo root, merging folders and replacing older **source** files.
+3. **Keep newer `data/snapshots/*.jsonl` and `public/data/kalshi-history.json` in Working Copy.** The ZIP includes the earliest verified 58-contract snapshot for backup, not necessarily the newest auto-collected data. Do not reset them. Do not delete existing snapshot dates.
+4. `.github/workflows/collect-kalshi-prices.yml` is included for completeness but **does not need changing**. V2.8 works with the existing installed workflow.
+5. Commit `Add paired NFL sportsbook evidence and forward screens (V2.8)` and Push to `main`. Confirm Vercel deployment READY.
+6. To attempt a sportsbook pairing immediately, open GitHub → Actions → **Collect Kalshi public NFL prices** → **Run workflow** on `main`. A manually dispatched workflow is intentionally allowed to try one sportsbook reference. It uses the existing cache and requires no API key on GitHub. Existing raw data is not replaced. Pull the resulting automatic GitHub commit before your next manual change.
+
+## Free-plan budget and safety
+
+SportsGameOdds currently documents **2,500 returned event objects per rolling monthly allowance**, per its official [rate-limit guide](https://sportsgameodds.com/docs/info/rate-limiting). The existing request targets up to 20 NFL events per 8-hour URL/cache window. Four automated prospective captures per week could potentially cause up to roughly 320 additional objects in four weeks **if all were independent cache misses**; the real incremental use may be lower due to existing shared caching. This is not a guarantee: other dashboard traffic, cache invalidations, manual runs, and user account activity all count toward your actual provider allowance. We do not currently have quota-meter readings. If usage becomes tight, disable extra reference calls until it resets.
+
+The collector **never places Kalshi orders**, stores API secrets, exports full bookmaker feeds, guarantees fills, or uses experimental EPA/Elo to qualify live trades. Observed quote comparisons are *evidence to test*, not evidence of profitability. Data collection schedule depends on GitHub Actions timing, upstream feeds, and Vercel public-route accessibility.
+
+---
+
 # NFL Edge Lab — V2.7 complete project
 
 **This archive contains the entire Next.js project, not just the update patch.**

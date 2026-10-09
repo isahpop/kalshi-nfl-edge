@@ -1,3 +1,20 @@
+# V2.8 — Forward paired market evidence (research only)
+
+The sportsbook consensus is captured prospectively near a Kalshi top-of-book snapshot. Matchups must be unique and bookmaker quotes fresh (oldest update ≤60m), not merely fetched by the collector. Only summarized, no-vig probabilities/quality metadata are stored. These are still bookmaker prices and are not a separately validated independent football model.
+
+A visible "research screen" is a one-contract, estimated-net-edge filter; it does not inherit full `/api/scan` kickoff verification or prove an order could fill. Later hypothetical payout is based on the first qualifying market screen per game and verified official settlement; this design prevents hindsight price selection but still ignores fill probability, portfolio allocation, cancellations, price impact, model error, tax, and changing fee schedules. Any positive paper P&L is not proof of alpha.
+
+Automatic paired attempts: Sunday 16/20 UTC, Monday 22 UTC, Thursday 22 UTC. Manual GitHub workflow dispatch tries one additionally. Existing Kalshi archiving runs every two hours and must continue even if sportsbook route access fails. `/api/odds` has an existing eight-hour provider cache; quota usage must be checked before expanding frequency. Both sources have independent observed timestamps and different publication/collection latencies. Historical quotes cannot be reconstructed from live odds after kickoff.
+
+## Follow-up validation priorities
+
+- Verify the public Vercel `/api/odds` endpoint is reachable by GitHub Actions (not assumed).
+- Record exact next-request quota usage if supported by provider, without exposing key.
+- Add independendly verified kickoff to the collector and explicit event cancellation/void accounting.
+- Evaluate market drift, sample coverage, bookmaker age and model calibration separately; require a genuine forward season and measured fill/slippage before profitability claims.
+
+---
+
 ## V2.6: measured calibration and timestamped public quote capture
 
 - New `lib/calibration.mjs` fits ridge-regularized logistic corrections with **2023–2024** eligible games only; the same 2025 games are evaluated for Elo, EPA, calibrated Elo, calibrated Elo+EPA, and historical sportsbook probability. 2025 is deliberately kept out of numeric fitting, but it has been inspected during previous V2.4/2.5 research: it is not a pristine blind development holdout.
