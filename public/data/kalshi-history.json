@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-11T12:57:44.713Z",
+  "generatedAt": "2026-10-11T18:57:58.617Z",
   "firstCapture": "2026-10-08T21:25:07.671Z",
-  "lastCapture": "2026-10-11T12:57:44.713Z",
-  "snapshots": 12,
-  "observations": 678,
+  "lastCapture": "2026-10-11T18:57:58.617Z",
+  "snapshots": 13,
+  "observations": 732,
   "trackedContracts": 58,
   "windowDays": 14,
   "coverage": "Kalshi quotes captured every ~2 hours; selected NFL windows include timestamped sportsbook no-vig consensus from Vercel when fresh. Best asks are not fills.",
@@ -59,9 +59,9 @@
       ]
     },
     "KXNFLGAME-26OCT11BALATL-ATL": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.62,
       "latestYesAsk": 0.62,
       "latestNoAsk": 0.39,
@@ -70,10 +70,6 @@
       "yesAskHigh": 0.62,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.62
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.62
         },
@@ -116,13 +112,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.62
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.62
         }
       ]
     },
     "KXNFLGAME-26OCT11BALATL-BAL": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.39,
       "latestYesAsk": 0.39,
       "latestNoAsk": 0.62,
@@ -131,10 +131,6 @@
       "yesAskHigh": 0.39,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.39
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.39
         },
@@ -176,25 +172,25 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.39
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.39
         }
       ]
     },
     "KXNFLGAME-26OCT11CHIGB-CHI": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.53,
-      "latestYesAsk": 0.53,
-      "latestNoAsk": 0.48,
-      "yesAskChangeCents": 0,
-      "yesAskLow": 0.53,
+      "latestYesAsk": 0.11,
+      "latestNoAsk": 0.9,
+      "yesAskChangeCents": -42,
+      "yesAskLow": 0.11,
       "yesAskHigh": 0.53,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.53
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.53
@@ -238,24 +234,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.53
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.11
         }
       ]
     },
     "KXNFLGAME-26OCT11CHIGB-GB": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.48,
-      "latestYesAsk": 0.48,
-      "latestNoAsk": 0.53,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.91,
+      "latestNoAsk": 0.1,
+      "yesAskChangeCents": 43,
       "yesAskLow": 0.47,
-      "yesAskHigh": 0.49,
+      "yesAskHigh": 0.91,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.48
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.48
@@ -299,24 +295,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.48
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.91
         }
       ]
     },
     "KXNFLGAME-26OCT11CINMIA-CIN": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.75,
-      "latestYesAsk": 0.75,
-      "latestNoAsk": 0.26,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.98,
+      "latestNoAsk": 0.03,
+      "yesAskChangeCents": 23,
       "yesAskLow": 0.75,
-      "yesAskHigh": 0.76,
+      "yesAskHigh": 0.98,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.75
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.75
@@ -360,24 +356,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.75
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.98
         }
       ]
     },
     "KXNFLGAME-26OCT11CINMIA-MIA": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.27,
-      "latestYesAsk": 0.25,
-      "latestNoAsk": 0.76,
-      "yesAskChangeCents": -2,
-      "yesAskLow": 0.25,
+      "latestYesAsk": 0.03,
+      "latestNoAsk": 0.98,
+      "yesAskChangeCents": -24,
+      "yesAskLow": 0.03,
       "yesAskHigh": 0.27,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.27
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.27
@@ -421,24 +417,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.25
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.03
         }
       ]
     },
     "KXNFLGAME-26OCT11CLENYJ-CLE": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.45,
-      "latestYesAsk": 0.44,
-      "latestNoAsk": 0.57,
-      "yesAskChangeCents": -1,
-      "yesAskLow": 0.44,
+      "latestYesAsk": 0.34,
+      "latestNoAsk": 0.67,
+      "yesAskChangeCents": -11,
+      "yesAskLow": 0.34,
       "yesAskHigh": 0.45,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.45
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.45
@@ -482,24 +478,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.44
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.34
         }
       ]
     },
     "KXNFLGAME-26OCT11CLENYJ-NYJ": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.56,
-      "latestYesAsk": 0.57,
-      "latestNoAsk": 0.44,
-      "yesAskChangeCents": 1,
+      "latestYesAsk": 0.67,
+      "latestNoAsk": 0.34,
+      "yesAskChangeCents": 11,
       "yesAskLow": 0.56,
-      "yesAskHigh": 0.57,
+      "yesAskHigh": 0.67,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.56
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.57
@@ -543,13 +539,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.57
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.67
         }
       ]
     },
     "KXNFLGAME-26OCT11DENLAC-DEN": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.63,
       "latestYesAsk": 0.64,
       "latestNoAsk": 0.37,
@@ -558,10 +558,6 @@
       "yesAskHigh": 0.64,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.63
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.64
         },
@@ -604,24 +600,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.64
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.64
         }
       ]
     },
     "KXNFLGAME-26OCT11DENLAC-LAC": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.38,
-      "latestYesAsk": 0.36,
-      "latestNoAsk": 0.65,
-      "yesAskChangeCents": -2,
+      "latestYesAsk": 0.37,
+      "latestNoAsk": 0.64,
+      "yesAskChangeCents": -1,
       "yesAskLow": 0.36,
       "yesAskHigh": 0.38,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.38
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.38
@@ -665,13 +661,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.36
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.37
         }
       ]
     },
     "KXNFLGAME-26OCT11DETARI-ARI": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.31,
       "latestYesAsk": 0.31,
       "latestNoAsk": 0.7,
@@ -680,10 +680,6 @@
       "yesAskHigh": 0.31,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.31
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.31
         },
@@ -726,13 +722,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.31
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.31
         }
       ]
     },
     "KXNFLGAME-26OCT11DETARI-DET": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.71,
       "latestYesAsk": 0.7,
       "latestNoAsk": 0.31,
@@ -741,10 +741,6 @@
       "yesAskHigh": 0.71,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.71
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.71
         },
@@ -786,25 +782,25 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.7
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.7
         }
       ]
     },
     "KXNFLGAME-26OCT11HOUTEN-HOU": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.77,
-      "latestYesAsk": 0.75,
-      "latestNoAsk": 0.26,
-      "yesAskChangeCents": -2,
+      "latestYesAsk": 0.98,
+      "latestNoAsk": 0.03,
+      "yesAskChangeCents": 21,
       "yesAskLow": 0.75,
-      "yesAskHigh": 0.78,
+      "yesAskHigh": 0.98,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.77
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.78
@@ -848,24 +844,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.75
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.98
         }
       ]
     },
     "KXNFLGAME-26OCT11HOUTEN-TEN": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.23,
-      "latestYesAsk": 0.25,
-      "latestNoAsk": 0.76,
-      "yesAskChangeCents": 2,
-      "yesAskLow": 0.23,
+      "latestYesAsk": 0.03,
+      "latestNoAsk": 0.98,
+      "yesAskChangeCents": -20,
+      "yesAskLow": 0.03,
       "yesAskHigh": 0.25,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.23
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.23
@@ -909,24 +905,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.25
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.03
         }
       ]
     },
     "KXNFLGAME-26OCT11INDPIT-IND": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.43,
-      "latestYesAsk": 0.41,
-      "latestNoAsk": 0.6,
-      "yesAskChangeCents": -2,
-      "yesAskLow": 0.41,
+      "latestYesAsk": 0.21,
+      "latestNoAsk": 0.8,
+      "yesAskChangeCents": -22,
+      "yesAskLow": 0.21,
       "yesAskHigh": 0.43,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.43
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.42
@@ -970,24 +966,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.41
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.21
         }
       ]
     },
     "KXNFLGAME-26OCT11INDPIT-PIT": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.58,
-      "latestYesAsk": 0.59,
-      "latestNoAsk": 0.42,
-      "yesAskChangeCents": 1,
+      "latestYesAsk": 0.8,
+      "latestNoAsk": 0.21,
+      "yesAskChangeCents": 22,
       "yesAskLow": 0.58,
-      "yesAskHigh": 0.59,
+      "yesAskHigh": 0.8,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.58
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.59
@@ -1031,24 +1027,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.59
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.8
         }
       ]
     },
     "KXNFLGAME-26OCT11LVNE-LV": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.37,
-      "latestYesAsk": 0.38,
-      "latestNoAsk": 0.63,
-      "yesAskChangeCents": 1,
-      "yesAskLow": 0.37,
+      "latestYesAsk": 0.03,
+      "latestNoAsk": 0.98,
+      "yesAskChangeCents": -34,
+      "yesAskLow": 0.03,
       "yesAskHigh": 0.38,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.37
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.37
@@ -1092,24 +1088,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.38
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.03
         }
       ]
     },
     "KXNFLGAME-26OCT11LVNE-NE": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.64,
-      "latestYesAsk": 0.63,
-      "latestNoAsk": 0.38,
-      "yesAskChangeCents": -1,
+      "latestYesAsk": 0.98,
+      "latestNoAsk": 0.03,
+      "yesAskChangeCents": 34,
       "yesAskLow": 0.63,
-      "yesAskHigh": 0.64,
+      "yesAskHigh": 0.98,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.64
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.64
@@ -1153,13 +1149,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.63
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.98
         }
       ]
     },
     "KXNFLGAME-26OCT11MINNO-MIN": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.57,
       "latestYesAsk": 0.56,
       "latestNoAsk": 0.45,
@@ -1168,10 +1168,6 @@
       "yesAskHigh": 0.57,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.57
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.57
         },
@@ -1213,25 +1209,25 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.56
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.56
         }
       ]
     },
     "KXNFLGAME-26OCT11MINNO-NO": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.45,
-      "latestYesAsk": 0.45,
+      "latestYesAsk": 0.46,
       "latestNoAsk": 0.56,
-      "yesAskChangeCents": 0,
+      "yesAskChangeCents": 1,
       "yesAskLow": 0.44,
-      "yesAskHigh": 0.45,
+      "yesAskHigh": 0.46,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.45
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.45
@@ -1275,24 +1271,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.45
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.46
         }
       ]
     },
     "KXNFLGAME-26OCT11NYGWAS-NYG": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.38,
-      "latestYesAsk": 0.37,
-      "latestNoAsk": 0.64,
-      "yesAskChangeCents": -1,
-      "yesAskLow": 0.37,
+      "latestYesAsk": 0.18,
+      "latestNoAsk": 0.83,
+      "yesAskChangeCents": -20,
+      "yesAskLow": 0.18,
       "yesAskHigh": 0.38,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.38
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.38
@@ -1336,24 +1332,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.37
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.18
         }
       ]
     },
     "KXNFLGAME-26OCT11NYGWAS-WAS": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.63,
-      "latestYesAsk": 0.64,
-      "latestNoAsk": 0.37,
-      "yesAskChangeCents": 1,
+      "latestYesAsk": 0.82,
+      "latestNoAsk": 0.19,
+      "yesAskChangeCents": 19,
       "yesAskLow": 0.63,
-      "yesAskHigh": 0.64,
+      "yesAskHigh": 0.82,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.63
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.63
@@ -1397,6 +1393,10 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.64
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.82
         }
       ]
     },
@@ -1523,20 +1523,16 @@
       ]
     },
     "KXNFLGAME-26OCT11SFSEA-SEA": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.62,
-      "latestYesAsk": 0.62,
-      "latestNoAsk": 0.39,
-      "yesAskChangeCents": 0,
-      "yesAskLow": 0.62,
+      "latestYesAsk": 0.61,
+      "latestNoAsk": 0.4,
+      "yesAskChangeCents": -1,
+      "yesAskLow": 0.61,
       "yesAskHigh": 0.62,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.62
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.62
@@ -1580,24 +1576,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.62
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.61
         }
       ]
     },
     "KXNFLGAME-26OCT11SFSEA-SF": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.39,
-      "latestYesAsk": 0.39,
-      "latestNoAsk": 0.62,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.4,
+      "latestNoAsk": 0.61,
+      "yesAskChangeCents": 1,
       "yesAskLow": 0.39,
-      "yesAskHigh": 0.39,
+      "yesAskHigh": 0.4,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.39
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.39
@@ -1641,13 +1637,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.39
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.4
         }
       ]
     },
     "KXNFLGAME-26OCT12BUFLAR-BUF": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.39,
       "latestYesAsk": 0.39,
       "latestNoAsk": 0.62,
@@ -1655,10 +1655,6 @@
       "yesAskLow": 0.39,
       "yesAskHigh": 0.39,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.39
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.39
@@ -1701,14 +1697,18 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.39
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.39
         }
       ]
     },
     "KXNFLGAME-26OCT12BUFLAR-LAR": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.62,
       "latestYesAsk": 0.62,
       "latestNoAsk": 0.39,
@@ -1716,10 +1716,6 @@
       "yesAskLow": 0.62,
       "yesAskHigh": 0.62,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.62
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.62
@@ -1763,13 +1759,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.62
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.62
         }
       ]
     },
     "KXNFLGAME-26OCT15SEADEN-DEN": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.45,
       "latestYesAsk": 0.45,
       "latestNoAsk": 0.56,
@@ -1778,10 +1778,6 @@
       "yesAskHigh": 0.47,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.45
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.45
         },
@@ -1824,13 +1820,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.45
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.45
         }
       ]
     },
     "KXNFLGAME-26OCT15SEADEN-SEA": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.57,
       "latestYesAsk": 0.56,
       "latestNoAsk": 0.45,
@@ -1839,10 +1839,6 @@
       "yesAskHigh": 0.57,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.57
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.57
         },
@@ -1884,26 +1880,26 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.56
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.56
         }
       ]
     },
     "KXNFLGAME-26OCT18ARILAR-ARI": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.16,
-      "latestYesAsk": 0.16,
-      "latestNoAsk": 0.85,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.15,
+      "latestNoAsk": 0.86,
+      "yesAskChangeCents": -1,
       "yesAskLow": 0.15,
       "yesAskHigh": 0.18,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.16
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.15
         },
@@ -1946,24 +1942,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.16
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.15
         }
       ]
     },
     "KXNFLGAME-26OCT18ARILAR-LAR": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.86,
-      "latestYesAsk": 0.85,
-      "latestNoAsk": 0.16,
-      "yesAskChangeCents": -1,
+      "latestYesAsk": 0.86,
+      "latestNoAsk": 0.15,
+      "yesAskChangeCents": 0,
       "yesAskLow": 0.84,
       "yesAskHigh": 0.86,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.86
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.86
@@ -2007,24 +2003,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.85
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.86
         }
       ]
     },
     "KXNFLGAME-26OCT18BALCLE-BAL": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.64,
-      "latestYesAsk": 0.67,
-      "latestNoAsk": 0.34,
-      "yesAskChangeCents": 3,
+      "latestYesAsk": 0.66,
+      "latestNoAsk": 0.36,
+      "yesAskChangeCents": 2,
       "yesAskLow": 0.64,
       "yesAskHigh": 0.67,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.64
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.64
@@ -2068,24 +2064,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.67
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.66
         }
       ]
     },
     "KXNFLGAME-26OCT18BALCLE-CLE": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.37,
-      "latestYesAsk": 0.36,
-      "latestNoAsk": 0.65,
-      "yesAskChangeCents": -1,
-      "yesAskLow": 0.36,
+      "latestYesAsk": 0.35,
+      "latestNoAsk": 0.66,
+      "yesAskChangeCents": -2,
+      "yesAskLow": 0.35,
       "yesAskHigh": 0.38,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.37
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.38
@@ -2129,13 +2125,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.36
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.35
         }
       ]
     },
     "KXNFLGAME-26OCT18BUFLV-BUF": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.7,
       "latestYesAsk": 0.7,
       "latestNoAsk": 0.32,
@@ -2143,10 +2143,6 @@
       "yesAskLow": 0.69,
       "yesAskHigh": 0.71,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.7
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.7
@@ -2190,25 +2186,25 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.7
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.7
         }
       ]
     },
     "KXNFLGAME-26OCT18BUFLV-LV": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.32,
       "latestYesAsk": 0.32,
-      "latestNoAsk": 0.69,
+      "latestNoAsk": 0.7,
       "yesAskChangeCents": 0,
       "yesAskLow": 0.31,
       "yesAskHigh": 0.33,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.32
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.32
         },
@@ -2250,25 +2246,25 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.32
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.32
         }
       ]
     },
     "KXNFLGAME-26OCT18CARPHI-CAR": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.49,
-      "latestYesAsk": 0.49,
-      "latestNoAsk": 0.53,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.5,
+      "latestNoAsk": 0.52,
+      "yesAskChangeCents": 1,
       "yesAskLow": 0.48,
       "yesAskHigh": 0.5,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.49
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.49
@@ -2312,25 +2308,25 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.49
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.5
         }
       ]
     },
     "KXNFLGAME-26OCT18CARPHI-PHI": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.53,
       "latestYesAsk": 0.53,
-      "latestNoAsk": 0.49,
+      "latestNoAsk": 0.48,
       "yesAskChangeCents": 0,
       "yesAskLow": 0.53,
       "yesAskHigh": 0.54,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.53
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.53
         },
@@ -2373,24 +2369,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.53
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.53
         }
       ]
     },
     "KXNFLGAME-26OCT18CHIATL-ATL": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.47,
       "latestYesAsk": 0.47,
-      "latestNoAsk": 0.55,
+      "latestNoAsk": 0.54,
       "yesAskChangeCents": 0,
       "yesAskLow": 0.46,
       "yesAskHigh": 0.48,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.47
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.47
@@ -2434,24 +2430,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.47
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.47
         }
       ]
     },
     "KXNFLGAME-26OCT18CHIATL-CHI": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.56,
       "latestYesAsk": 0.55,
-      "latestNoAsk": 0.47,
+      "latestNoAsk": 0.46,
       "yesAskChangeCents": -1,
       "yesAskLow": 0.55,
       "yesAskHigh": 0.57,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.56
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.56
@@ -2495,13 +2491,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.55
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.55
         }
       ]
     },
     "KXNFLGAME-26OCT18DALGB-DAL": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.56,
       "latestYesAsk": 0.54,
       "latestNoAsk": 0.47,
@@ -2509,10 +2509,6 @@
       "yesAskLow": 0.54,
       "yesAskHigh": 0.56,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.56
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.56
@@ -2556,24 +2552,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.54
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.54
         }
       ]
     },
     "KXNFLGAME-26OCT18DALGB-GB": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.46,
-      "latestYesAsk": 0.47,
+      "latestYesAsk": 0.48,
       "latestNoAsk": 0.54,
-      "yesAskChangeCents": 1,
+      "yesAskChangeCents": 2,
       "yesAskLow": 0.46,
       "yesAskHigh": 0.49,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.46
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.47
@@ -2617,25 +2613,25 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.47
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.48
         }
       ]
     },
     "KXNFLGAME-26OCT18HOUJAC-HOU": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.4,
-      "latestYesAsk": 0.4,
-      "latestNoAsk": 0.62,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.41,
+      "latestNoAsk": 0.6,
+      "yesAskChangeCents": 1,
       "yesAskLow": 0.39,
       "yesAskHigh": 0.41,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.4
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.39
         },
@@ -2678,24 +2674,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.4
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.41
         }
       ]
     },
     "KXNFLGAME-26OCT18HOUJAC-JAC": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.62,
-      "latestYesAsk": 0.62,
-      "latestNoAsk": 0.4,
-      "yesAskChangeCents": 0,
-      "yesAskLow": 0.62,
+      "latestYesAsk": 0.6,
+      "latestNoAsk": 0.41,
+      "yesAskChangeCents": -2,
+      "yesAskLow": 0.6,
       "yesAskHigh": 0.63,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.62
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.62
@@ -2739,24 +2735,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.62
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.6
         }
       ]
     },
     "KXNFLGAME-26OCT18LACKC-KC": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.81,
-      "latestYesAsk": 0.81,
+      "latestYesAsk": 0.82,
       "latestNoAsk": 0.2,
-      "yesAskChangeCents": 0,
+      "yesAskChangeCents": 1,
       "yesAskLow": 0.8,
       "yesAskHigh": 0.82,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.81
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.81
@@ -2800,24 +2796,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.81
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.82
         }
       ]
     },
     "KXNFLGAME-26OCT18LACKC-LAC": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.21,
       "latestYesAsk": 0.21,
-      "latestNoAsk": 0.8,
+      "latestNoAsk": 0.81,
       "yesAskChangeCents": 0,
       "yesAskLow": 0.2,
       "yesAskHigh": 0.23,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.21
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.21
@@ -2861,24 +2857,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.21
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.21
         }
       ]
     },
     "KXNFLGAME-26OCT18NONYG-NO": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.53,
-      "latestYesAsk": 0.54,
+      "latestYesAsk": 0.53,
       "latestNoAsk": 0.49,
-      "yesAskChangeCents": 1,
+      "yesAskChangeCents": 0,
       "yesAskLow": 0.53,
       "yesAskHigh": 0.54,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.53
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.53
@@ -2922,24 +2918,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.54
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.53
         }
       ]
     },
     "KXNFLGAME-26OCT18NONYG-NYG": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.49,
-      "latestYesAsk": 0.49,
+      "latestYesAsk": 0.48,
       "latestNoAsk": 0.54,
-      "yesAskChangeCents": 0,
-      "yesAskLow": 0.49,
+      "yesAskChangeCents": -1,
+      "yesAskLow": 0.48,
       "yesAskHigh": 0.5,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.49
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.49
@@ -2983,24 +2979,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.49
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.48
         }
       ]
     },
     "KXNFLGAME-26OCT18NYJNE-NE": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.76,
-      "latestYesAsk": 0.75,
-      "latestNoAsk": 0.27,
-      "yesAskChangeCents": -1,
+      "latestYesAsk": 0.76,
+      "latestNoAsk": 0.26,
+      "yesAskChangeCents": 0,
       "yesAskLow": 0.75,
       "yesAskHigh": 0.76,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.76
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.76
@@ -3044,24 +3040,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.75
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.76
         }
       ]
     },
     "KXNFLGAME-26OCT18NYJNE-NYJ": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.27,
-      "latestYesAsk": 0.27,
-      "latestNoAsk": 0.74,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.26,
+      "latestNoAsk": 0.75,
+      "yesAskChangeCents": -1,
       "yesAskLow": 0.26,
       "yesAskHigh": 0.29,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.27
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.27
@@ -3105,13 +3101,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.27
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.26
         }
       ]
     },
     "KXNFLGAME-26OCT18PITTB-PIT": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.58,
       "latestYesAsk": 0.57,
       "latestNoAsk": 0.45,
@@ -3120,10 +3120,6 @@
       "yesAskHigh": 0.58,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.58
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.58
         },
@@ -3165,26 +3161,26 @@
         },
         {
           "at": "2026-10-11T12:57:44.713Z",
+          "yesAsk": 0.57
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
           "yesAsk": 0.57
         }
       ]
     },
     "KXNFLGAME-26OCT18PITTB-TB": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.44,
-      "latestYesAsk": 0.45,
+      "latestYesAsk": 0.44,
       "latestNoAsk": 0.57,
-      "yesAskChangeCents": 1,
+      "yesAskChangeCents": 0,
       "yesAskLow": 0.44,
       "yesAskHigh": 0.46,
       "recent": [
         {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.44
-        },
-        {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.45
         },
@@ -3227,24 +3223,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.45
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.44
         }
       ]
     },
     "KXNFLGAME-26OCT18TENIND-IND": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.74,
-      "latestYesAsk": 0.74,
+      "latestYesAsk": 0.73,
       "latestNoAsk": 0.28,
-      "yesAskChangeCents": 0,
-      "yesAskLow": 0.74,
+      "yesAskChangeCents": -1,
+      "yesAskLow": 0.73,
       "yesAskHigh": 0.74,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.74
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.74
@@ -3288,24 +3284,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.74
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.73
         }
       ]
     },
     "KXNFLGAME-26OCT18TENIND-TEN": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.28,
-      "latestYesAsk": 0.28,
-      "latestNoAsk": 0.75,
-      "yesAskChangeCents": 0,
+      "latestYesAsk": 0.3,
+      "latestNoAsk": 0.72,
+      "yesAskChangeCents": 2,
       "yesAskLow": 0.28,
-      "yesAskHigh": 0.29,
+      "yesAskHigh": 0.3,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.28
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.28
@@ -3349,24 +3345,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.28
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.3
         }
       ]
     },
     "KXNFLGAME-26OCT19WASSF-SF": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.8,
-      "latestYesAsk": 0.8,
-      "latestNoAsk": 0.23,
-      "yesAskChangeCents": 0,
-      "yesAskLow": 0.8,
+      "latestYesAsk": 0.78,
+      "latestNoAsk": 0.25,
+      "yesAskChangeCents": -2,
+      "yesAskLow": 0.78,
       "yesAskHigh": 0.8,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.8
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.8
@@ -3410,24 +3406,24 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.8
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.78
         }
       ]
     },
     "KXNFLGAME-26OCT19WASSF-WAS": {
-      "observations": 12,
+      "observations": 13,
       "firstSeen": "2026-10-08T21:25:07.671Z",
-      "lastSeen": "2026-10-11T12:57:44.713Z",
+      "lastSeen": "2026-10-11T18:57:58.617Z",
       "firstYesAsk": 0.22,
-      "latestYesAsk": 0.23,
-      "latestNoAsk": 0.79,
-      "yesAskChangeCents": 1,
+      "latestYesAsk": 0.24,
+      "latestNoAsk": 0.78,
+      "yesAskChangeCents": 2,
       "yesAskLow": 0.22,
       "yesAskHigh": 0.24,
       "recent": [
-        {
-          "at": "2026-10-08T21:25:07.671Z",
-          "yesAsk": 0.22
-        },
         {
           "at": "2026-10-09T00:52:39.707Z",
           "yesAsk": 0.23
@@ -3471,13 +3467,17 @@
         {
           "at": "2026-10-11T12:57:44.713Z",
           "yesAsk": 0.23
+        },
+        {
+          "at": "2026-10-11T18:57:58.617Z",
+          "yesAsk": 0.24
         }
       ]
     }
   },
   "settlements": {
     "available": true,
-    "fetchedAt": "2026-10-11T12:57:44.713Z",
+    "fetchedAt": "2026-10-11T18:57:58.617Z",
     "trackedContracts": 58,
     "verifiedSettlements": 0,
     "unresolvedOrUnverified": 58,
@@ -3485,7 +3485,7 @@
     "note": "Verified public market outcomes linked to archived quotes. First ask is not a fill; no strategy ROI is implied."
   },
   "pairedEvidence": {
-    "generatedAt": "2026-10-11T12:57:44.713Z",
+    "generatedAt": "2026-10-11T18:57:58.617Z",
     "windowDays": 35,
     "attempts": 1,
     "successfulCaptures": 1,
